@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Roadmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f7f6; }
+        .container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 900px; }
+        h1 { text-align: center; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Roadmap</h1>
+        
+        <pre class="mermaid">
+        graph TD
+            Start((Project Start)) --> Phase1[Research & Planning]
+            Phase1 --> Phase2[Development]
+            Phase1 --> Phase3[Community Outreach]
+            
+            Phase2 --> Milestone1{Release Beta}
+            Phase3 --> Milestone1
+            
+            Milestone1 --> Final[Global Launch]
+
+            %% Adding Interactivity (Clicking nodes opens links)
+            click Phase1 "https://github.com" "View Research Docs"
+            click Phase3 "https://google.com" "Join Community"
+            
+            %% Custom Styling
+            style Start fill:#f9f,stroke:#333,stroke-width:2px
+            style Milestone1 fill:#00d2ff,stroke:#fff,color:#fff
+        </pre>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
+</body>
+</html>
